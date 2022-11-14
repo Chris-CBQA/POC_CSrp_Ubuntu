@@ -1,6 +1,6 @@
 # POC For C# Execution in Ubuntu 20.04
 
-This console aplication logs a Hello World and writes into a file with the date-time as the files name. It will write logs files at `HOME/Poc`.
+This console aplication logs a Hello World and writes a simple log into a file with the date-time of execution as the file's name. The log files will be written on `~/PoC/`. All logic is within `./POC_CSrp_Ubuntu/Program.cs`
 
 
 # Setup 
@@ -10,9 +10,8 @@ This console aplication logs a Hello World and writes into a file with the date-
 <br/>
 
 ## Runtime Enviroment
----
 
-Fetching the dotnet packages from the official Microsoft Pagage Registry and adding it to local registry.
+Fetching the dotnet package signature from the official Microsoft Package Registry and adding it to the trusted packages list.
 
 ```bash
   wget https://packages.microsoft.com/config/ubuntu/20.04/ packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -22,10 +21,37 @@ Fetching the dotnet packages from the official Microsoft Pagage Registry and add
   rm packages-microsoft-prod.deb
 ```
 
-Package Installation (For development and build):
+Package Installation (For dev / build machine):
 
 ```bash
   sudo apt-get install -y dotnet-sdk-6.0
 ```
 
+Runtime instalation (If your machine will only execute your application), it uses the ASP.NET core which contains the most common Web Service utilities.
 
+```bash
+  sudo apt-get install -y aspnetcore-runtime-6.0
+```
+
+## Preparing package (Build and Send to server)
+
+Clone this project in your **development machine** (Where you intalled `dotnet-sdk-6.0`):
+
+```bash
+git clone https://github.com/Chris-CBQA/POC_CSrp_Ubuntu.git
+cd ./POC_CSrp_Ubuntu
+```
+
+**Inside your repo directory**, generate the executable, .dll file, and bundled dependencies. It will create a `./build` directory
+
+```bash
+dotnet publish -o ./build
+```
+
+If you want to test the published deployment, run the folowing command:
+
+```bash
+dotnet ./build/POC_CSrp_Ubuntu.dll
+```
+
+_TODO: Add deployment and execution instrucctions_
