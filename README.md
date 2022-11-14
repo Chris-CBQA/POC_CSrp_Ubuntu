@@ -22,7 +22,7 @@ Fetching the dotnet packages from the official Microsoft Pagage Registry and add
   rm packages-microsoft-prod.deb
 ```
 
-Package Installation (For development):
+Package Installation (For development and build):
 
 ```bash
   sudo apt-get install -y dotnet-sdk-6.0
