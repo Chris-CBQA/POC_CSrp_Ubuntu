@@ -1,6 +1,6 @@
 # POC For C# Execution in Ubuntu 20.04
 
-This console aplication logs a Hello World and writes a simple log into a file with the date-time of execution as the file's name. The log files will be written on `~/PoC/`. All logic is within `./POC_CSrp_Ubuntu/Program.cs`
+This console application logs a Hello World and writes a simple log into a file with the date-time of execution as the file's name. The log files will be written on `~/PoC/`. All logic is within `./POC_CSrp_Ubuntu/Program.cs`
 
 
 # Setup 
@@ -9,7 +9,7 @@ This console aplication logs a Hello World and writes a simple log into a file w
 **Runtime**: .Net Core 6.0
 <br/>
 
-## Runtime Enviroment
+## Runtime Environment
 
 Fetching the dotnet package signature from the official Microsoft Package Registry and adding it to the trusted packages list.
 
@@ -27,7 +27,7 @@ Package Installation (For dev / build machine):
   sudo apt-get install -y dotnet-sdk-6.0
 ```
 
-Runtime instalation (If your machine will only execute your application), it uses the ASP.NET core which contains the most common Web Service utilities.
+Runtime installation (If your machine will only execute your application), it uses the ASP.NET core which contains the most common Web Service utilities.
 
 ```bash
   sudo apt-get install -y aspnetcore-runtime-6.0
@@ -35,7 +35,7 @@ Runtime instalation (If your machine will only execute your application), it use
 
 ## Preparing package (Build and Send to server)
 
-Clone this project in your **development machine** (Where you intalled `dotnet-sdk-6.0`):
+Clone this project in your **development machine** (Where you installed `dotnet-sdk-6.0`):
 
 ```bash
 git clone https://github.com/Chris-CBQA/POC_CSrp_Ubuntu.git
@@ -48,10 +48,10 @@ cd ./POC_CSrp_Ubuntu
 dotnet publish -o ./build
 ```
 
-If you want to test the published deployment, run the folowing command:
+If you want to test the published deployment, run the following command:
 
 ```bash
 dotnet ./build/POC_CSrp_Ubuntu.dll
 ```
 
-_TODO: Add deployment and execution instrucctions_
+_TODO: Add deployment and execution instructions_
